@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce ipractice api\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-20 21:08+0000\n"
+"PO-Revision-Date: 2021-03-20 21:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: עִבְרִית\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.5.3\n"
+"X-Domain: ipractice-woo-api"
+
+#. Author of the plugin
+msgid "Avi Dalal"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://avidalal.net"
+msgstr ""
+
+#. Description of the plugin
+msgid "Send an order data each time an order with is completed."
+msgstr ""
+
+#. Name of the plugin
+msgid "WooCommerce ipractice api"
+msgstr "ממשק איפרקטיס ווקומרס"

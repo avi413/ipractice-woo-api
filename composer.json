@@ -1,0 +1,15 @@
+{
+    "name": "avid/ipractice-woo-api",
+    "description": "Interface to ipractice when changing order status",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "AviD",
+            "email": "avi413@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}

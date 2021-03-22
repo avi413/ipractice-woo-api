@@ -24,11 +24,11 @@ class IpracticeCall
 			// Iterate Through Items
 			$items = $order->get_items(); 
 			
-			
+			$username = explode("@",$order->billing_email);
 			foreach ( $items as $item ) {	
 				//$product_id 	= $item['product_id'];
 			    $product 		= new WC_Product($item['product_id']);
-				$username		= wp_get_current_user()->user_login;
+				$username		= $username[0];
 				$email			= $order->billing_email; 
 				$tz				= $order->billing_tz; 
 				$projectsku     = $product->get_sku();
@@ -57,11 +57,6 @@ class IpracticeCall
 		        // API Callout to URL
 				$url = esc_attr( get_option('ipractice_ep'));
 				update_post_meta( $order_id, 'ipractice_ep', $url );
-				if(get_post_meta( $order_id, 'ipractice_call', true ) =='')
-				{
-					update_post_meta( $order_id, 'ipractice_call', "2" );
-					$ipKey = "0";
-				}
 				$body = array(
 					"tz"			=> $tz,
 					"name" 			=> $username,
@@ -99,12 +94,13 @@ class IpracticeCall
 				curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
 		
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				update_post_meta( $order_id, 'ipractice_curl_exec', 'before'  );
+
 				// Execute curl and assign returned data
 				$response  = curl_exec($ch);
 				update_post_meta( $order_id, 'ipractice_curl_exec', 'after'  );
 				// Close curl
 				curl_close($ch);
+				$iprers = array();
 				$iprers = json_decode($response);
 				update_post_meta( $order_id, 'ipractice_curl_exec1', $iprers  );
 				

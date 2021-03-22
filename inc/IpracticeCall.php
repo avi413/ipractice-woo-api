@@ -109,8 +109,6 @@ class IpracticeCall
 				foreach ($iprers as $key => $val) {
 					update_post_meta( $order_id, 'ipractice_'.$key, $val );
 				}
-				if(get_post_meta( $order_id, 'ipractice_status', true ) == "")
-					update_post_meta( $order_id, 'ipractice_status', "OK" );
 
 		    }
 	    }
